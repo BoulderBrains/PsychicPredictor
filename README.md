@@ -1,9 +1,9 @@
 # PsychicPredictor
 A small game that allows you to try and guess a character that the computer will randomly select.
 
-## Option One: Psychic Game (Basic)
+### Github pages url: https://boulderbrains.github.io/PsychicPredictor/
 
-![Psychic](Images/1-Psychic.jpg)
+## Psychic Game (Basic)
 
 1. [Watch the demo](https://youtu.be/qTc45Lox97g).
 
