@@ -20,24 +20,18 @@ if (guessesRemaining > 0) {
 			if (userInput === computerSelection) {
 				alert('You win!');
 				wins++;
+				reset();
 			} else if (userInput !== computerSelection) {
 				guesses.push(userInput);
 				guessesRemaining--;
 				setVariables();
 				if (guessesRemaining === 0) {
 					alert('Sorry, you lose');
-					return;
+					losses++;
+					reset();
 				}
 			}
 		}
-
-		// console.log('######');
-		// console.log(userInput);
-		// console.log('-----');
-		// console.log(computerSelection);
-		// console.log('-----');
-		// console.log(guessesRemaining);
-		// console.log('######');
 	};
 } 
 
@@ -56,15 +50,16 @@ function setVariables() {
 }
 
 function reset() {
-	wins = 0;
-	losses = 0;
 	guessesRemaining = 5;
 	guesses = [];
 	document.getElementById("userGuess").innerText = "";
 	document.getElementById("computerSelection").innerText = "";
-
 	setVariables();
 };
+
+function hardReset() {
+	location.reload();
+}
 
 // including this here so variable are pushed into html containers on page load
 setVariables();
