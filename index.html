@@ -5,11 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+	<!-- Linking in Google font include -->
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans" rel="stylesheet">
+
+	<!-- Linking in Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 	<!-- Linking in my CSS file -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
-	<!-- Linking in Google font include -->
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans" rel="stylesheet">
 
 	<title>Psychic Predictor</title>
 </head>
@@ -17,21 +21,40 @@
 	<div class="container">
 		<p id="headingText">Are you a Psychic Predictor?<p>
 		<h3>Can you predict which letter from the alphabet the computer will randomly choose?</h3>
-		<p>Directions:</p>
-		<ul>
-			<li>Choose your prediction by typing a letter between a - z</li>
-			<li>You have 5 chances to predict the computer's selection</li>
-			<li>If you successfully predict the computer's selection, you win!</li>
-			<li>Don't run out of chances!</li>
-		</ul>
+		
+		<div class="row">
+			<!-- Bootstrap jumbotron -->
+			<div class="jumbotron col-sm-6">
+				<div class="row">
+					<span class="col-sm-6">
+						<p>Your prediction:</p>
+						<span id="userGuess" class="display-3"></span>
+						<p>Predictions you've made:<p id="guesses"></p></p>
+					</span>
+					<span class="col-sm-6">
+						<p>Computer's Choice:</p>
+						<span id="computerSelection" class="display-3"></span>
+					</span>
+				</div>
+			</div>
 
-		<div id="userGuess"></div>
-		<div id="computerSelection"></div>
+			<div class="card directions col-sm-4 offset-sm-2">
+					<h3 class="card-header primary-color white-text">Directions</h3>
+					<div class="card-body">
+						<ul>
+							<li class="card-text">Choose your prediction by typing a letter between a - z</li>
+							<li class="card-text">You have 5 chances to predict the computer's selection</li>
+							<li class="card-text">If you successfully predict the computer's selection, you win!</li>
+							<li class="card-text">Don't run out of chances!</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+
+		<p>Predictions remaining:<p id="guessesRemaining"></p>
 
 		<p>Wins:<p id="wins"></p></p>
 		<p>Losses:<p id="losses"></p></p>
-		<p>Predictions remaining:<p id="guessesRemaining"></p>
-		<p>Predictions you've made:<p id="guesses"></p></p>
 
 		<button onClick="hardReset()">Hard Reset</button>
 		<p>* this will clear your wins/losses</p>
@@ -41,5 +64,10 @@
 	<!-- LINKING THIS DOWN HERE SO THE DOM IS COMPLETELY 
 	LOADED BEFORE ANY JAVASCRIPT WILL BE TRIGGERED -->
 	<script src="assets/javascript/game.js"></script>
+
+	<!-- Linking in bootstrap/jquery, mainly for grid -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

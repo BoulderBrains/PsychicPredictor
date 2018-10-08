@@ -12,3 +12,7 @@ p,
 li {
 	font-family: 'Josefin Sans', sans-serif;
 }
+
+.directions {
+	padding: 0;
+}
